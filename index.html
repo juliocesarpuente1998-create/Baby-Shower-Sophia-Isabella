@@ -125,38 +125,28 @@
     /* PHOTO GALLERY */
     .photo-gallery {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 12px;
-      max-width: 680px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      max-width: 720px;
       margin: 0 auto;
     }
     .photo-item {
-      border-radius: 18px;
+      border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 6px 30px rgba(201,142,160,.18);
-      aspect-ratio: 4/3;
       border: 2px solid rgba(242,167,184,.25);
-    }
-    .photo-item.photo-large {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-    }
-    .photo-item.photo-tall {
-      grid-column: 2 / 3;
-      grid-row: 1 / 3;
-      aspect-ratio: unset;
+      aspect-ratio: 3/4;
     }
     .photo-item img {
       width: 100%; height: 100%;
-      object-fit: cover;
-      transition: transform .4s ease;
+      object-fit: contain;
+      background: #fff5f8;
       display: block;
+      transition: transform .4s ease;
     }
-    .photo-item:hover img { transform: scale(1.04); }
+    .photo-item:hover img { transform: scale(1.03); }
     @media (max-width: 500px) {
       .photo-gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .photo-item.photo-tall { aspect-ratio: unset; min-height: 200px; }
     }
 
     /* GIFT LIST */
@@ -233,11 +223,8 @@
     </div>
   </div>
   <div class="photo-gallery">
-    <div class="photo-item photo-large">
+    <div class="photo-item">
       <img src="https://i.ibb.co/S7KjRvWG/IMG-20251026-WA0026.jpg" alt="Julio y Karla" loading="lazy" />
-    </div>
-    <div class="photo-item photo-tall">
-      <img src="https://i.ibb.co/HfbpsCXv/IMG-20250913-223413.jpg" alt="Julio y Karla" loading="lazy" />
     </div>
     <div class="photo-item">
       <img src="https://i.ibb.co/bMFJfTS2/IMG-20250524-WA0012.jpg" alt="Julio y Karla" loading="lazy" />
@@ -245,11 +232,14 @@
     <div class="photo-item">
       <img src="https://i.ibb.co/rKnrcgDN/IMG-20250525-WA0038.jpg" alt="Julio y Karla" loading="lazy" />
     </div>
-    <div class="photo-item photo-wide" style="grid-column:1/-1;aspect-ratio:16/7;">
+    <div class="photo-item">
       <img src="https://i.ibb.co/k2YSZspy/IMG-20250706-202120-1.jpg" alt="Julio y Karla" loading="lazy" />
     </div>
-    <div class="photo-item photo-wide" style="grid-column:1/-1;aspect-ratio:16/7;">
+    <div class="photo-item">
       <img src="https://i.ibb.co/dh8nhBN/IMG-20250816-183623.jpg" alt="Julio y Karla" loading="lazy" />
+    </div>
+    <div class="photo-item">
+      <img src="https://i.ibb.co/HfbpsCXv/IMG-20250913-223413.jpg" alt="Julio y Karla" loading="lazy" />
     </div>
   </div>
 </section>
