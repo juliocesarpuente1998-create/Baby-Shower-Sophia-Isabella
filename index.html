@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baby Shower · Sophía Isabella</title>
+  <title>Baby Shower · Sophia Isabella</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -122,32 +122,22 @@
     .parent-name-badge { text-align: center; }
     .parent-heart { font-size: 2rem; }
 
-    /* PHOTO GALLERY */
-    .photo-gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      max-width: 720px;
+    /* PHOTO SINGLE */
+    .photo-single {
+      max-width: 420px;
       margin: 0 auto;
-    }
-    .photo-item {
-      border-radius: 14px;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 6px 30px rgba(201,142,160,.18);
-      border: 2px solid rgba(242,167,184,.25);
-      aspect-ratio: 3/4;
+      box-shadow: 0 12px 50px rgba(201,142,160,.28);
+      border: 3px solid rgba(242,167,184,.35);
     }
-    .photo-item img {
+    .photo-single img {
       width: 100%; height: 100%;
-      object-fit: contain;
-      background: #fff5f8;
+      object-fit: cover;
       display: block;
-      transition: transform .4s ease;
+      transition: transform .5s ease;
     }
-    .photo-item:hover img { transform: scale(1.03); }
-    @media (max-width: 500px) {
-      .photo-gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
-    }
+    .photo-single:hover img { transform: scale(1.03); }
 
     /* GIFT LIST */
     .gift-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.5rem; }
@@ -173,7 +163,7 @@
 <div class="hero">
   <div class="hero-ring"><span class="hero-emoji">🌸</span></div>
   <span class="subtitle">Baby Shower</span>
-  <h1 class="hero-name">Sophía<br><em>Isabella</em></h1>
+  <h1 class="hero-name">Sophia<br><em>Isabella</em></h1>
   <p class="hero-tagline">Puente Solorzano · 2026</p>
   <div class="scroll-hint">
     <span>Desliza</span>
@@ -222,25 +212,8 @@
       <p class="parent-name">Karla Solorzano</p>
     </div>
   </div>
-  <div class="photo-gallery">
-    <div class="photo-item">
-      <img src="https://i.ibb.co/S7KjRvWG/IMG-20251026-WA0026.jpg" alt="Julio y Karla" loading="lazy" />
-    </div>
-    <div class="photo-item">
-      <img src="https://i.ibb.co/bMFJfTS2/IMG-20250524-WA0012.jpg" alt="Julio y Karla" loading="lazy" />
-    </div>
-    <div class="photo-item">
-      <img src="https://i.ibb.co/rKnrcgDN/IMG-20250525-WA0038.jpg" alt="Julio y Karla" loading="lazy" />
-    </div>
-    <div class="photo-item">
-      <img src="https://i.ibb.co/k2YSZspy/IMG-20250706-202120-1.jpg" alt="Julio y Karla" loading="lazy" />
-    </div>
-    <div class="photo-item">
-      <img src="https://i.ibb.co/dh8nhBN/IMG-20250816-183623.jpg" alt="Julio y Karla" loading="lazy" />
-    </div>
-    <div class="photo-item">
-      <img src="https://i.ibb.co/HfbpsCXv/IMG-20250913-223413.jpg" alt="Julio y Karla" loading="lazy" />
-    </div>
+  <div class="photo-single">
+    <img src="https://i.ibb.co/9HxJkzty/IMG-20260604-094909.jpg" alt="Julio y Karla" loading="lazy" />
   </div>
 </section>
 
@@ -381,30 +354,4 @@
   for (let i = 0; i < 28; i++) {
     const p = document.createElement('div');
     p.className = 'petal';
-    p.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*-20}%;background:${colors[Math.floor(Math.random()*colors.length)]};width:${10+Math.random()*14}px;height:${10+Math.random()*14}px;animation-duration:${6+Math.random()*10}s;animation-delay:${Math.random()*8}s;transform:rotate(${Math.random()*360}deg);border-radius:${['60% 40% 60% 40% / 40% 60% 40% 60%','50%','70% 30% 50% 50% / 30% 50% 70% 50%'][Math.floor(Math.random()*3)]};`;
-    container.appendChild(p);
-  }
-
-  /* COPY */
-  function copyText(text, btn) {
-    navigator.clipboard.writeText(text).then(() => {
-      const orig = btn.innerHTML;
-      btn.innerHTML = '✓ Copiado';
-      btn.style.color = '#c98ea0';
-      setTimeout(() => { btn.innerHTML = orig; }, 2000);
-    });
-  }
-
-
-
-  /* SCROLL FADE */
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('section,.event-card,.parent-card,.bank-card,.rsvp-box').forEach(el => {
-    el.style.cssText += 'opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;';
-    observer.observe(el);
-  });
-</script>
-</body>
-</html>
+    p.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*-20}%;background:${colors[Math.floor(Math.random()*colors.length)]};width:${10+Math.random()*14}px;height:${10+Math.random()*14}px;animation-duration:${6+Math.random()*10}s;animation-delay:${Math.random()*8}s;transform:rotate(${Math.
